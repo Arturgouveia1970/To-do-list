@@ -17,7 +17,7 @@ const taskList = [
     completed: false,
     index: 2,
   },
-  
+
   {
     description: 'Workout',
     completed: true,
