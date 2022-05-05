@@ -1,6 +1,5 @@
 import './styles.css';
 
-
 // ### 1. Data
 const taskList = [
   {
