@@ -1,58 +1,38 @@
 import './styles.css';
+import addElem from './modules/add-elements.js';
+import Tasklist from './modules/class-task-list.js';
+import refreshList from './modules/refresh-list.js';
 
-// ### 1. Data
-const taskList = [
-  {
-    description: 'Shopping',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Study ES6 - Webpack',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Complete Awesome Books ES6',
-    completed: false,
-    index: 2,
-  },
+const taskList = new Tasklist();
 
-  {
-    description: 'Workout',
-    completed: true,
-    index: 3,
-  },
-];
-
-// ### 2. DOM Manipulations
+// DOM Manipulations
 const mainContainer = document.querySelector('.todo-list-container');
 
+// header, title and input
 mainContainer.innerHTML = `<div class="row">
 <h1>Today's To Do</h1>
-<i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
-</div>
-<div>
-<input placeholder="Add to your list...">
+<i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>;
 </div>`;
+const inputContainer = addElem('form', [], mainContainer);
+const inputText = addElem('input', ['input-add-task'], inputContainer);
+inputText.setAtribute('placeholder', 'Add to your list...');
+addElem('i' ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
 
-const populateTask = () => {
-  taskList.forEach((e) => {
-    let isChecked;
-    let strikeThrough;
-    if (e.completed === true) {
-      isChecked = 'checked';
-      strikeThrough = 'strike-through';
-    }
+// the list
+const listContainer = addElem('div', [], mainContainer);
+const clearBtn = addElem(''button, ['button'], mainContainer);
+clearBtn.text.content = 'Clea rall completed';
 
-    mainContainer.innerHTML += `<div class="row">
-  <input class="checkbox" type="checkbox" ${isChecked}>
-  <p class="${strikeThrough}">${e.description}</p>
-  <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
-  </div>`;
-  });
+inputContainer.onsubmit = (e) => {
+  e.preventDefault();
+  taskList.addTask(inputText.value);
+  inputContainer.reset();
+  refreshList(taskList, listContainer);    
 };
 
-populateTask();
+clearBtn.onclick = () => {
+  Tasklist.clearCompleted();
+  refreshList(taskList, listContainer);
+};
 
-mainContainer.innerHTML += '<button class="button">Clear all completed</button>';
+refreshList(taskList,listContainer);
