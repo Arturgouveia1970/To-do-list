@@ -36,19 +36,23 @@ mainContainer.innerHTML = `<div class="row">
 <input placeholder="Add to your list...">
 </div>`;
 
-taskList.forEach((e) => {
-  let isChecked;
-  let strikeThrough;
-  if (e.completed === true) {
-    isChecked = 'checked';
-    strikeThrough = 'strike-through';
-  }
+const populateTask = () => {
+  taskList.forEach((e) => {
+    let isChecked;
+    let strikeThrough;
+    if (e.completed === true) {
+      isChecked = 'checked';
+      strikeThrough = 'strike-through';
+    }
 
-  mainContainer.innerHTML += `<div class="row">
+    mainContainer.innerHTML += `<div class="row">
   <input class="checkbox" type="checkbox" ${isChecked}>
   <p class="${strikeThrough}">${e.description}</p>
   <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
   </div>`;
-});
+  });
+};
+
+populateTask();
 
 mainContainer.innerHTML += '<button class="button">Clear all completed</button>';
