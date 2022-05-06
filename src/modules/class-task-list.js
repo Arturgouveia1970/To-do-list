@@ -1,5 +1,5 @@
 import Task from './class-task.js';
-import isStorageAvailable from './local-storage.checker.js';
+import isStorageAvailable from './local-storage-checker.js';
 
 const storageName = 'tasklist';
 
