@@ -16,18 +16,18 @@ mainContainer.innerHTML = `<div class="row">
 const inputContainer = addElem('form', [], mainContainer);
 const inputText = addElem('input', ['input-add-task'], inputContainer);
 inputText.setAtribute('placeholder', 'Add to your list...');
-addElem('i' ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
+addElem('i', ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
 
 // the list
 const listContainer = addElem('div', [], mainContainer);
-const clearBtn = addElem(''button, ['button'], mainContainer);
-clearBtn.text.content = 'Clea rall completed';
+const clearBtn = addElem('button', ['button'], mainContainer);
+clearBtn.text.content = 'Clear all completed';
 
 inputContainer.onsubmit = (e) => {
   e.preventDefault();
   taskList.addTask(inputText.value);
   inputContainer.reset();
-  refreshList(taskList, listContainer);    
+  refreshList(taskList, listContainer);
 };
 
 clearBtn.onclick = () => {
@@ -35,4 +35,4 @@ clearBtn.onclick = () => {
   refreshList(taskList, listContainer);
 };
 
-refreshList(taskList,listContainer);
+refreshList(taskList, listContainer);
