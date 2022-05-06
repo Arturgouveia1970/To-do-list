@@ -71,13 +71,6 @@ input:focus {
   display: none !important;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-}
-
 .todo-list-container {
   width: 500px;
   max-width: 500px;

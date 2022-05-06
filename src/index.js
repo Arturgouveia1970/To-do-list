@@ -15,13 +15,13 @@ mainContainer.innerHTML = `<div class="row">
 </div>`;
 const inputContainer = addElem('form', [], mainContainer);
 const inputText = addElem('input', ['input-add-task'], inputContainer);
-inputText.setAtribute('placeholder', 'Add to your list...');
+// inputText.setAtribute('placeholder', 'Add to your list...');
 addElem('i', ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
 
 // the list
 const listContainer = addElem('div', [], mainContainer);
 const clearBtn = addElem('button', ['button'], mainContainer);
-clearBtn.text.content = 'Clear all completed';
+clearBtn.textContent = 'Clear all completed';
 
 inputContainer.onsubmit = (e) => {
   e.preventDefault();
@@ -31,6 +31,7 @@ inputContainer.onsubmit = (e) => {
 };
 
 clearBtn.onclick = () => {
+  console.log('limpar');
   Tasklist.clearCompleted();
   refreshList(taskList, listContainer);
 };
