@@ -1,5 +1,5 @@
 import addElem from './add-elements.js';
-import Task from './class-task.js;
+// import Task from './class-task.js';
 
 const refreshList = (_class, _container) => {
   _container.innerHTML = '';
@@ -8,10 +8,9 @@ const refreshList = (_class, _container) => {
     let isChecked;
     let strikeThrough;
     if (e.completed === true) {
-      isChecked = checked;
+      isChecked = 'checked';
       strikeThrough = 'strike-through';
     }
-    
     const todoList = addElem('div', ['row', 'todo-list'], _container);
     const listCheckBox = addElem('input', ['checkbox'], todoList);
     listCheckBox.setAtribute('type', 'checkbox');
@@ -42,4 +41,3 @@ const refreshList = (_class, _container) => {
   });
 };
 export default refreshList;
-  
