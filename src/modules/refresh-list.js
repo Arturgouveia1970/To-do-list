@@ -19,6 +19,7 @@ const refreshList = (_class, _container) => {
     listText.value = e.description;
     const listIconDots = addElem('i', ['fa-solid', 'fa-ellipsis-vertical', 'fa-lg', 'font-awesome-icon'], todoList);
     const removeBtn = addElem('button', ['remove-button', 'hide'], todoList);
+    // eslint-disable-next-line no-unused-vars
     const listIconTrash = addElem('i', ['fa-solid', 'fa-trash-can', 'fa-lg', 'font-awesome-icon'], removeBtn);
     const elemID = e.id;
 
