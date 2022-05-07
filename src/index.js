@@ -13,9 +13,10 @@ mainContainer.innerHTML = `<div class="row">
 <h1>Today's To Do</h1>
 <i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>;
 </div>`;
+
 const inputContainer = addElem('form', [], mainContainer);
 const inputText = addElem('input', ['input-add-task'], inputContainer);
-// inputText.setAtribute('placeholder', 'Add to your list...');
+inputText.setAtribute('placeholder', 'Add to your list...');
 addElem('i', ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
 
 // the list
@@ -31,7 +32,6 @@ inputContainer.onsubmit = (e) => {
 };
 
 clearBtn.onclick = () => {
-  console.log('limpar');
   Tasklist.clearCompleted();
   refreshList(taskList, listContainer);
 };
