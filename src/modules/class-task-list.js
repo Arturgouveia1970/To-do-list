@@ -1,7 +1,7 @@
 import Task from './class-task.js';
 import isStorageAvailable from './local-storage-checker.js';
 
-const storageName = 'tasklist';
+const storageName = 'taskList';
 
 export default class TaskList {
   constructor() {
@@ -29,8 +29,10 @@ export default class TaskList {
   addTask(task) {
     if (isStorageAvailable) {
       const taskObj = new Task(task, this.id);
+
       this.data.push(taskObj);
       localStorage.setItem(storageName, JSON.stringify(this.data));
+
       this.id += 1;
     }
   }
@@ -46,6 +48,7 @@ export default class TaskList {
       if (obj.id === taskID) {
         return { ...obj, completed: status };
       }
+
       return obj;
     });
     localStorage.setItem(storageName, JSON.stringify(this.data));
@@ -56,6 +59,7 @@ export default class TaskList {
       if (obj.id === taskID) {
         return { ...obj, description: newTask };
       }
+
       return obj;
     });
     localStorage.setItem(storageName, JSON.stringify(this.data));
@@ -64,7 +68,7 @@ export default class TaskList {
   resetIds() {
     let i = 1;
     this.data.forEach((e) => {
-      e.id = 1;
+      e.id = i;
       i += 1;
     });
     this.id = i;

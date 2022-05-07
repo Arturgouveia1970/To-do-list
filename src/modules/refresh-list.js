@@ -1,5 +1,4 @@
 import addElem from './add-elements.js';
-import Task from './class-task.js';
 
 const refreshList = (_class, _container) => {
   _container.innerHTML = '';
@@ -11,18 +10,16 @@ const refreshList = (_class, _container) => {
       isChecked = 'checked';
       strikeThrough = 'strike-through';
     }
+
     const todoList = addElem('div', ['row', 'todo-list'], _container);
     const listCheckBox = addElem('input', ['checkbox'], todoList);
-    listCheckBox.setAtribute('type', 'checkbox');
-    listCheckBox.setAtribute(isChecked, '');
+    listCheckBox.setAttribute('type', 'checkbox');
+    listCheckBox.setAttribute(isChecked, '');
     const listText = addElem('input', ['list-text', strikeThrough], todoList);
     listText.value = e.description;
-    const listIconDots = addElem('i', ['fa-solid', 'fa-ellipsis-vertical', 'fa-lg',
-      'font-awesome-icon'], todoList);
+    const listIconDots = addElem('i', ['fa-solid', 'fa-ellipsis-vertical', 'fa-lg', 'font-awesome-icon'], todoList);
     const removeBtn = addElem('button', ['remove-button', 'hide'], todoList);
-    const listIconTrash = addElem('i', ['fa-solid', 'fa-trash-can', 'fa-lg',
-     'font-awesome-icon'], removeBtn);
-
+    const listIconTrash = addElem('i', ['fa-solid', 'fa-trash-can', 'fa-lg', 'font-awesome-icon'], removeBtn);
     const elemID = e.id;
 
     document.body.addEventListener('click', () => {

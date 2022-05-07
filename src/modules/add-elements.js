@@ -1,4 +1,4 @@
-function addElem(elem, classes, parent) {
+const addElem = (elem, classes, parent) => {
   const createdElem = document.createElement(elem);
   if (classes !== undefined) {
     classes.forEach((cl) => createdElem.classList.add(cl));
@@ -6,6 +6,6 @@ function addElem(elem, classes, parent) {
   parent.appendChild(createdElem);
 
   return createdElem;
-}
+};
 
 export default addElem;

@@ -67,10 +67,6 @@ input:focus {
   min-height: 100vh;
 }
 
-.hide {
-  display: none !important;
-}
-
 .todo-list-container {
   width: 500px;
   max-width: 500px;
