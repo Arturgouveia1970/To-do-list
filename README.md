@@ -15,6 +15,13 @@
 
 [View website](https://arturgouveia1970.github.io/To-do-list/)
 
+## Install
+
+Clone this repository into your machine:
+https://github.com/Arturgouveia1970/To-do-list.git
+npm . init -y
+npm install
+
 ## Authors
 
 👤 **Artur Gouveia**

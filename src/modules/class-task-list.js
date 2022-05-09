@@ -59,10 +59,9 @@ export default class TaskList {
       if (obj.id === taskID) {
         return { ...obj, description: newTask };
       }
-
       return obj;
     });
-    localStorage.setItem(storageName, JSON.stringify(this.data));
+    localStorage.setItem('storageName', JSON.stringify(this.data));
   }
 
   resetIds() {
