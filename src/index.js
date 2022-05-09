@@ -32,7 +32,7 @@ inputContainer.onsubmit = (e) => {
   taskList.addTask(inputText.value);
 
   inputContainer.reset();
-  refreshList(taskList, listContainer)
+  refreshList(taskList, listContainer);
 };
 
 // clear button
