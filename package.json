@@ -4,6 +4,7 @@
   "description": "a daily list of thing to do",
   "private": true,
   "scripts": {
+    "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
