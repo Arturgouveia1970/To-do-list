@@ -44,4 +44,4 @@ clearBtn.onclick = () => {
 
 // On load
 refreshList(taskList, listContainer);
-renameTask();
+taskList.renameTask();

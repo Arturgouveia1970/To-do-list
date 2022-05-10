@@ -6,6 +6,8 @@ const refreshList = (_class, _container) => {
   _class.data.forEach((e) => {
     let isChecked;
     let strikeThrough;
+
+    
     if (e.completed === true) {
       isChecked = 'checked';
       strikeThrough = 'strike-through';
@@ -38,6 +40,8 @@ const refreshList = (_class, _container) => {
       _class.removeTask(elemID);
       refreshList(_class, _container);
     };
+
+    
   });
 };
 export default refreshList;
